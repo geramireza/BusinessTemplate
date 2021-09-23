@@ -1,0 +1,38 @@
+@font-face {
+    font-family: iransans;
+    src: url("../fonts/IRANSansWeb200.woff") format('woff');
+    font-weight: 200;
+}
+@font-face {
+    font-family: iransans;
+    src: url("../fonts/IRANSansWeb300.woff") format('woff');
+    font-weight: 300;
+}
+@font-face {
+    font-family: iransans;
+    src: url("../fonts/IRANSansWeb400.woff") format('woff');
+    font-weight: 400;
+}
+@font-face {
+    font-family: iransans;
+    src: url("../fonts/IRANSansWeb500.woff") format('woff');
+    font-weight: 500;
+}
+@font-face {
+    font-family: iransans;
+    src: url("../fonts/IRANSansWeb600.woff") format('woff');
+    font-weight: 600;
+}
+@font-face {
+    font-family: iransans;
+    src: url("../fonts/IRANSansWeb900.woff") format('woff');
+    font-weight: 900;
+}
+@font-face {
+    font-family: yekan;
+    src: url("../fonts/yekan.woff") format('woff');
+}
+@font-face {
+    font-family: yekanf;
+    src: url("../fonts/yekanf.woff") format('woff');
+}

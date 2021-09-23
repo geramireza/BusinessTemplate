@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item{
+            width: 150px;
+            height: 150px;
+            font-size: 120px;
+            color: white;
+            margin: 5px;
+            float: left;
+            text-align: center;
+        }
+        .red{
+            background-color: red;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .green{
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+    <div id=wrapper>
+        <div class="item red" data-color="red" data-number="1">1</div>
+        <div class="item red" data-color="red" data-number="2">2</div>
+        <div class="item blue" data-color="blue" data-number="1">1</div>
+        <div class="item green" data-color="green" data-number="3">3</div>
+        <div class="item red" data-color="red" data-number="4">4</div>
+        <div class="item blue" data-color="blue" data-number="4">4</div>
+        <div class="item blue" data-color="blue" data-number="2">2</div>
+        <div class="item green" data-color="green" data-number="2">2</div>
+        <div class="item red" data-color="red" data-number="3">3</div>
+        <div class="item green" data-color="green" data-number="1">1</div>
+        <div class="item red" data-color="red" data-number="2">2</div>
+        <div class="item blue" data-color="blue" data-number="4">4</div>
+        <!-- <div style="clear: both;"></div> -->
+    </div>
+
+    <br><br>
+    <form action="">
+        <label for="">Filter:</label>
+        <button type="button" class="filterButton" data-filter="*">All</button>
+        <button type="button" class="filterButton" data-filter=".red">Red</button>
+        <button type="button" class="filterButton" data-filter=".blue">Blue</button>
+        <button type="button" class="filterButton" data-filter=".green">Green</button>
+        <br><br>
+        <label for="">Sort:</label>
+        <button type="button" class="sortButton" data-sort="color">Color</button>
+        <button type="button" class="sortButton" data-sort="number">Number</button>
+        <button type="button" class="sortButton" data-sort="random">Random</button>
+    </form>
+
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+
+    <script>
+        var wrapper = $('#wrapper').isotope({
+            getSortData: {
+                color: function(elm){
+                    return $(elm).data('color')
+                },
+                number: function(elm){
+                    return $(elm).data('number')
+                }
+            }
+        })
+
+        $('.filterButton').on('click',function(){
+            var filter = $(this).data('filter')
+            wrapper.isotope({ filter: filter })
+        })
+
+        $('.sortButton').on('click',function(){
+            var sort = $(this).data('sort')
+            wrapper.isotope({ sortBy: sort })
+        })
+
+    </script>
+   
+
+</body>
+</html>
